@@ -24,10 +24,8 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/api/auth{/**}
-            - Path=/api/users{/**}
-          filters:
-            - StripPrefix=0
+            - Path=/api/auth/**
+            - Path=/api/users/**
 
 logging:
   level:
