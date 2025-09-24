@@ -35,4 +35,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+security:
+  jwt:
+    secret: ${JWT_SECRET:XZCWPq6HWsbE4Rcp5VdaXUL64wDrPYu07T2azl4URwo=}
+    issuer: "event-booking"
+    access-token-ttl-min: 60
 
