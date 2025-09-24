@@ -40,4 +40,4 @@ security:
   jwt:
     issuer: "event-booking"
     access-token-ttl-min: 60
-    secret: ${JWT_SECRET:eventBookingSystemUserServiceSecretKey12345}
+    secret: ${JWT_SECRET:XZCWPq6HWsbE4Rcp5VdaXUL64wDrPYu07T2azl4URwo=}
