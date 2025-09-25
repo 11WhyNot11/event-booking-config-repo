@@ -38,3 +38,8 @@ spring:
 logging:
   level:
     org.springframework.cloud.gateway: INFO
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,loggers,routes
