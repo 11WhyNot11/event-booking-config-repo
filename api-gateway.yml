@@ -14,12 +14,12 @@ spring:
           enabled: false
           lower-case-service-id: true
       routes:
-        - id: event-service
-          uri: lb://event-service
-          predicates:
-            - Path=/api/events/**
-          filters:
-            - StripPrefix=0
+#                - id: event-service
+        #          uri: lb://event-service
+        #          predicates:
+        #            - Path=/api/events/**
+        #          filters:
+        #            - StripPrefix=0
 
         - id: user-auth
           uri: lb://user-service
