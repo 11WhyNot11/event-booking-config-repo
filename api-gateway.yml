@@ -1,6 +1,14 @@
 server:
   port: 8080
 
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8888
+
 eureka:
   client:
     service-url:
@@ -14,12 +22,13 @@ spring:
           enabled: false
           lower-case-service-id: true
       routes:
-#                - id: event-service
-        #          uri: lb://event-service
-        #          predicates:
-        #            - Path=/api/events/**
-        #          filters:
-        #            - StripPrefix=0
+        # Приклад для майбутнього event-service
+        # - id: event-service
+        #   uri: lb://event-service
+        #   predicates:
+        #     - Path=/api/events/**
+        #   filters:
+        #     - StripPrefix=0
 
         - id: user-auth
           uri: lb://user-service
@@ -38,6 +47,7 @@ spring:
 logging:
   level:
     org.springframework.cloud.gateway: INFO
+
 management:
   endpoints:
     web:
