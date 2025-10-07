@@ -9,12 +9,6 @@ spring:
   config:
     import: optional:configserver:http://localhost:8888
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-
-spring:
   cloud:
     gateway:
       discovery:
@@ -44,6 +38,11 @@ spring:
           filters:
             - StripPrefix=0
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
 logging:
   level:
     org.springframework.cloud.gateway: INFO
@@ -53,3 +52,4 @@ management:
     web:
       exposure:
         include: health,info,loggers,routes
+
