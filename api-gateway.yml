@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: api-gateway
+  profiles:
+    active: main
+  config:
+    import: optional:configserver:http://localhost:8888
 
   cloud:
     gateway:
@@ -34,8 +38,12 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,routes
+        include: health,info,gateway,refresh,env
+  endpoint:
+    gateway:
+      enabled: true
 
 logging:
   level:
     org.springframework.cloud.gateway: INFO
+
