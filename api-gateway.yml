@@ -16,20 +16,14 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/auth/**
-          filters:
-            - StripPrefix=0
         - id: user-service
           uri: lb://user-service
           predicates:
             - Path=/api/users/**
-          filters:
-            - StripPrefix=0
         - id: event-service
           uri: lb://event-service
           predicates:
             - Path=/api/events/**
-          filters:
-            - StripPrefix=1
 
 eureka:
   client:
